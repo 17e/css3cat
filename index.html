@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Cat</title>
+    <style type="text/css">
+      #wrapper {
+      // background: transparent url('kote.png') no-repeat 140px 0px; padding-top: 15px;
+      }
+      #head {
+      background: #07beea;
+      width: 111px;
+      height: 108px;
+      border: 1px #000 solid;
+      border-radius: 53px;
+      -moz-border-radius: 53px;    /* Firefox */
+      -webkit-border-radius: 53px; /* Safari, Chrome */
+      -khtml-border-radius: 53px;  /* KHTML (Konquerer) */
+      box-shadow: -2px 2px 5px #999;
+      -moz-box-shadow: -2px 2px 5px #999;
+      -webkit-box-shadow: -2px 2px 5px #999;
+      background-image: -moz-linear-gradient(left bottom , #074f61, #07beea, #07beea, #e9f2f4);
+      margin-left: 13px;
+      }
+      #face {
+      background: #fff;
+      width:95px;
+      height: 70px;
+      border: 1px #000 solid;
+      border-radius: 53px;
+      -moz-border-radius: 53px;    /* Firefox */
+      -webkit-border-radius: 53px; /* Safari, Chrome */
+      -khtml-border-radius: 53px;  /* KHTML (Konquerer) */
+      liner-gradient(left bottom , #777, #fff, #fff, #fff, #fff, #fff); /* CSS 3 */
+      background-image: -moz-linear-gradient(left bottom , #777, #fff, #fff, #fff, #fff, #fff); /* Firefox */
+      background-image: -webkit-gradient(left bottom , #777, #fff, #fff, #fff, #fff, #fff); /* Safari, Chrome */
+      margin: 29px 7px 0 7px;
+      position: relative; 
+      }
+      .eye {
+      background: #fff;
+      width: 24px;
+      height: 28px;
+      border: 1px #000 solid;
+      border-radius: 11px;
+      -moz-border-radius: 11px;    /* Firefox */
+      -webkit-border-radius: 11px; /* Safari, Chrome */
+      -khtml-border-radius: 11px;  /* KHTML (Konquerer) */
+      position: absolute;
+      left: 22px;
+      top: -15px;
+      }
+      #left_eye {
+      }
+      #right_eye {
+      left: 47px;
+      top: -15px;
+      }
+      .pupil {
+      background: #000;
+      width: 5px;
+      height: 5px;
+      border-radius: 3px;
+      -moz-border-radius: 3px;    /* Firefox */
+      -webkit-border-radius: 3px; /* Safari, Chrome */
+      -khtml-border-radius: 3px;  /* KHTML (Konquerer) */
+      margin: 18px 0 0 15px;
+      }
+      #right_eye .pupil {
+      margin: 18px 0 0 4px;
+      }      
+      #nose {
+      background: #c93e00;
+      width: 11px;
+      height: 11px;
+      border: 1px #000 solid;
+      border-radius: 6px;
+      -moz-border-radius: 6px;    /* Firefox */
+      -webkit-border-radius: 6px; /* Safari, Chrome */
+      -khtml-border-radius: 6px;  /* KHTML (Konquerer) */
+      background-image: -moz-radial-gradient(8px 4px, circle closest-side, #fff 0%, #c93e00 100%);
+      position: absolute;
+      left:41px;
+      top:10px;      
+      }
+      #wrinkle {
+      background: #000;
+      width: 1px;
+      height: 36px;
+      position: absolute;
+      left: 47px;
+      top: 19px;
+      }
+      .whisker {
+      background: #000;
+      width: 21px;
+      height: 1px;
+      position: absolute;
+      }
+      .whisker_left {
+      left: 10px;
+      top: 20px;
+      }
+      .whisker_right {
+      right: 10px;
+      top: 27px;      
+      }
+      #smile_box {
+      position: absolute;
+      height: 14px;
+      width: 85px;
+      left: 5px;
+      top: 42px;
+      overflow: hidden;
+      }
+      #smile {
+      width: 85px;
+      height: 85px;
+      border-radius: 40px;
+      -moz-border-radius: 40px;    /* Firefox */
+      -webkit-border-radius: 40px; /* Safari, Chrome */
+      -khtml-border-radius: 40px;  /* KHTML (Konquerer) */
+      border-color: #000;
+      border-style: solid;
+      border-width: 1px;
+      position: absolute;
+      left: -1px;
+      top: -73px;
+      z-index:0;
+      }
+      #collar {
+      background: #c93e00;
+      width: 83px;
+      height: 6px;
+      border: 1px #000 solid;
+      border-radius: 4px;
+      -moz-border-radius: 4px;    /* Firefox */
+      -webkit-border-radius: 4px; /* Safari, Chrome */
+      -khtml-border-radius: 4px;  /* KHTML (Konquerer) */
+      margin-left: 27px;
+      -moz-box-shadow: -3px 0px 5px 0px #999;
+      }
+      #left_arm {
+      background: #07beea;
+      width: 30px;
+      height: 17px;
+      border-color: #000;
+      border-style: solid;
+      border-width: 1px;
+      position: absolute;
+      transform: rotate(-36deg);
+      -moz-transform: rotate(-36deg);    /* Firefox */
+      -webkit-transform: rotate(-36deg); /* Safari, Chrome */
+      -o-transform: rotate(-36deg);      /* Opera */
+      left: 11px;
+      top: 10px;
+      z-index: -1;
+      background-image: -moz-linear-gradient(-30px 0px -36deg, #07beea, #007ca4);
+      -moz-box-shadow: 0px 3px 5px #999;
+      }
+      #right_arm {
+      background: #07beea;
+      width: 30px;
+      height: 17px;
+      border-color: #000;
+      border-style: solid;
+      border-width: 1px;
+      position: absolute;
+      transform: rotate(36deg);
+      -moz-transform: rotate(36deg);    /* Firefox */
+      -webkit-transform: rotate(36deg); /* Safari, Chrome */
+      -o-transform: rotate(36deg);      /* Opera */
+      right: 11px;
+      top: 10px;
+      z-index: -1;
+      -moz-box-shadow: 0px 3px 5px #999;
+      }
+      #left_hand {
+      background: #fff;
+      width: 21px;
+      height: 21px;
+      border: 1px #000 solid;
+      border-radius: 11px;
+      -moz-border-radius: 11px;    /* Firefox */
+      -webkit-border-radius: 11px; /* Safari, Chrome */
+      -khtml-border-radius: 11px;  /* KHTML (Konquerer) */
+      position: absolute;
+      left: 0px;
+      top: 20px;
+      -moz-box-shadow: -1px 1px 5px #999;
+      }
+      #right_hand {
+      background: #fff;
+      width: 21px;
+      height: 21px;
+      border: 1px #000 solid;
+      border-radius: 11px;
+      -moz-border-radius: 11px;    /* Firefox */
+      -webkit-border-radius: 11px; /* Safari, Chrome */
+      -khtml-border-radius: 11px;  /* KHTML (Konquerer) */
+      position: absolute;
+      right: 0px;
+      top: 20px;
+      -moz-box-shadow: -1px 1px 5px #999;
+      }
+      #bust {
+      background: #07beea;
+      width: 81px;
+      height: 17px;
+      margin-left: 30px;
+      background-image: -moz-linear-gradient(-5px 0 0deg, #007ca4, #07beea, #007ca4, #07beea, #07beea);
+      }
+      #pelvis {
+      background: #07beea;
+      width: 79px;
+      height: 40px;
+      border-color: #000;
+      border-style: solid;
+      border-width: 0 1px;
+      margin-left: 30px;
+      background-image: -moz-linear-gradient(-5px 0 0deg, #007ca4, #07beea, #007ca4, #07beea, #07beea);
+      box-shadow: -2px 0px 0px #999;
+      -moz-box-shadow: -5px 1px 5px -2px #999;
+      -webkit-box-shadow: -2px 2px 5px #999;
+      }
+      #apron_wrapper {
+      width: 61px;
+      height: 48px;
+      position: absolute;
+      left: 39px;
+      top: 8px;
+      overflow: hidden;
+      }
+      #apron {
+      background-color: #fff;
+      width: 59px;
+      height: 59px;
+      border: 1px #000 solid;
+      -moz-border-radius: 30px;
+      position: absolute;
+      left: 0; top: -13px;
+      background-image: -moz-linear-gradient(left bottom 30deg, #777, #fff, #fff, #fff, #fff);
+      }
+      #apron div {
+      width: 45px;
+      height: 23px;
+      border: 1px #000 solid;
+      -moz-border-radius: 0 0 23px 23px;
+      margin: 28px 6px;
+      }
+      #bell {
+      background: #f8f02a;
+      width: 13px;
+      height: 13px;
+      border: 1px #000 solid;
+      -moz-border-radius: 7px;
+      position: absolute;
+      left: 62px;
+      top: 3px;
+      background-image: -moz-radial-gradient(9px 3px, circle closest-side, #fff 0%, #f8f02a 100%);
+      }
+      #balls {
+      background: #fff;
+      width: 7px;
+      height: 4px;
+      border-color: #000;
+      border-style: solid;
+      border-width: 1px 1px 0 1px;
+      -moz-border-radius: 5px 5px 0px 0px;
+      position: absolute;
+      left: 65px;
+      top: 60px;
+      background-image: -moz-linear-gradient(left bottom 0deg, #fff, #fff, #999);
+      }
+      .foot {
+      background: #fff;
+      width: 44px;
+      height: 10px;
+      border: 1px #000 solid;
+      position: absolute;
+      top: 64px;
+      background-image: -moz-linear-gradient(0 0 20deg, #bbb, #fff, #fff, #fff, #fff, #fff);
+      }
+      #left_foot {
+      -moz-border-radius: 10px 6px 6px 6px;
+      -moz-box-shadow: -3px 0px 5px #999;
+      left: 23px;      
+      }
+      #right_foot {
+      -moz-border-radius: 6px 10px 6px 6px;
+      right: 23px;
+      -moz-box-shadow: -1px 0px 5px #999;
+      }
+      .rotate_p18 {
+      transform: rotate(18deg);
+      -moz-transform: rotate(18deg);    /* Firefox */
+      -webkit-transform: rotate(18deg); /* Safari, Chrome */
+      -o-transform: rotate(18deg);      /* Opera */
+      }
+      .rotate_m18 {
+      transform: rotate(-18deg);
+      -moz-transform: rotate(-18deg);    /* Firefox */
+      -webkit-transform: rotate(-18deg); /* Safari, Chrome */
+      -o-transform: rotate(-18deg);      /* Opera */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="head">
+	<div id="face">
+	  <div id="left_eye" class="eye"><div class="pupil"></div></div>
+	  <div id="right_eye" class="eye"><div class="pupil"></div></div>
+	  <div id="smile_box"><div id="smile"></div></div>
+	  <div id="wrinkle"></div>
+	  <div id="nose"></div>
+	  <div class="whisker whisker_left rotate_p18" style="left: 10px; top: 20px;"></div>
+	  <div class="whisker whisker_left" style="left: 10px; top: 27px;"></div>
+	  <div class="whisker whisker_left rotate_m18" style="left: 10px; top: 34px;"></div>
+	  <div class="whisker whisker_right rotate_m18" style="right: 10px; top: 20px;"></div>
+	  <div class="whisker whisker_right" style="right: 10px; top: 27px;"></div>
+	  <div class="whisker whisker_right rotate_p18" style="right: 10px; top: 34px;"></div>
+	</div>
+      </div>
+      <div id="body_wrapper" style="width: 139px; height: 80px; position: relative; top: -15px;">
+	<div id="left_arm"></div>
+	<div id="right_arm"></div>
+	<div id="left_hand"></div>
+	<div id="right_hand"></div>
+	<div id="collar"></div>
+	<div id="bust"></div>
+	<div id="pelvis"></div>
+	<div id="apron_wrapper">
+	  <div id="apron">
+	    <div></div>
+	  </div>
+	</div>
+	<div id="bell">
+	  <div style="width: 11px; height: 1px; border: 1px #000 solid; margin-top: 2px;"></div>
+	  <div style="background: #000; width: 3px; height: 3px; margin-left: 5px; margin-top: 1px;"></div>
+	  <div style="background: #000; width: 1px; height: 5px; margin-left: 6px;"></div>
+	</div>
+	<div id="balls" style=""></div>
+
+	<div class="foot" id="left_foot"></div>
+	<div class="foot" id="right_foot"></div>
+      </div>
+    </div>
+    <a title="Home" href="http://code.google.com/p/css3cat/">Project home</a>
+  </body>
+</html>
